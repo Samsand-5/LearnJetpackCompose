@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
 //            Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null, tint = Color.Black )
 //            Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = null)
 //            TextField(value = "", onValueChange ={}, label = {
-//                Text(text = "lable")
+//                Text(text = "label")
 //            })
 //            FloatingActionButton(onClick = { println("click") }) {
 //                Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null )
@@ -40,10 +40,11 @@ class MainActivity : ComponentActivity() {
 //                  },
 //                  backgroundColor = Color.Red
 //            )
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-                Text(text = "hello", modifier = Modifier.align(Alignment.TopCenter))
-                Text(text = "welcome",modifier = Modifier.align(Alignment.TopEnd))
-            }
+//            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+//                Text(text = "hello", modifier = Modifier.align(Alignment.TopCenter))
+//                Text(text = "welcome",modifier = Modifier.align(Alignment.TopEnd))
+//            }
+
             }
         }
     }
