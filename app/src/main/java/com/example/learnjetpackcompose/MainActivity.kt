@@ -19,7 +19,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent{
-            Text(text = "Welcome to jetpack Compose", color = Color.Red, fontSize = 22.sp, fontWeight = FontWeight.Bold)
             greeting(name = "World")
         }
     }
