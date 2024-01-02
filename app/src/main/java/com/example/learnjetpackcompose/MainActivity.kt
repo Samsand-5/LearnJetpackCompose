@@ -19,10 +19,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent{
-//            greeting(name = "World")
-//            Button(onClick = { println("click") }, content = {
-//              Text(text = "button")
-//            })
+            greeting(name = "World")
+            Button(onClick = { println("click") }, content = {
+              Text(text = "button")
+            })
 //            Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null, tint = Color.Black )
 //            Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = null)
 //            TextField(value = "", onValueChange ={}, label = {
@@ -30,15 +30,14 @@ class MainActivity : ComponentActivity() {
 //            })
 //            FloatingActionButton(onClick = { println("click") }) {
 //                Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null )
-              ExtendedFloatingActionButton(text = { 
-                  Text(text = "welcome")
-              },
-                  onClick = { /*TODO*/ },
-                  icon = {
-                      Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null )
-                  },
-                  backgroundColor = Color.Red
-              )
+//              ExtendedFloatingActionButton(text = {
+//                  Text(text = "welcome")
+//              },
+//                  onClick = { /*TODO*/ },
+//                  icon = { //                     Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null )
+//                  },
+//                  backgroundColor = Color.Red
+//            )
             }
         }
     }
