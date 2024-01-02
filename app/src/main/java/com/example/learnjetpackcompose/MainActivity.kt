@@ -28,12 +28,20 @@ class MainActivity : ComponentActivity() {
 //            TextField(value = "", onValueChange ={}, label = {
 //                Text(text = "lable")
 //            })
-            FloatingActionButton(onClick = { println("click") }) {
-                Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null )
+//            FloatingActionButton(onClick = { println("click") }) {
+//                Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null )
+              ExtendedFloatingActionButton(text = { 
+                  Text(text = "welcome")
+              },
+                  onClick = { /*TODO*/ },
+                  icon = {
+                      Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null )
+                  },
+                  backgroundColor = Color.Red
+              )
             }
         }
     }
-}
 
 @Composable
 fun greeting(name: String){
