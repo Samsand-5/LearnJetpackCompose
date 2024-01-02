@@ -3,6 +3,7 @@ package com.example.learnjetpackcompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -22,7 +23,8 @@ class MainActivity : ComponentActivity() {
 //            Button(onClick = { println("click") }, content = {
 //              Text(text = "button")
 //            })
-            Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null, tint = Color.Black )
+//            Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null, tint = Color.Black )
+//            Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = null)
         }
     }
 }
