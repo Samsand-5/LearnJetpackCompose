@@ -20,6 +20,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent{
             Text(text = "Welcome to jetpack Compose", color = Color.Red, fontSize = 22.sp, fontWeight = FontWeight.Bold)
+            greeting(name = "World")
         }
     }
+}
+@Composable
+fun greeting(name: String){
+    Text(text = "Welcome to jetpack $name", color = Color.Red, fontSize = 22.sp, fontWeight = FontWeight.Bold)
 }
