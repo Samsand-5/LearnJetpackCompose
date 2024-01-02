@@ -25,9 +25,12 @@ class MainActivity : ComponentActivity() {
 //            })
 //            Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null, tint = Color.Black )
 //            Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = null)
-            TextField(value = "", onValueChange ={}, label = {
-                Text(text = "lable")
-            })
+//            TextField(value = "", onValueChange ={}, label = {
+//                Text(text = "lable")
+//            })
+            FloatingActionButton(onClick = { println("click") }) {
+                Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null )
+            }
         }
     }
 }
