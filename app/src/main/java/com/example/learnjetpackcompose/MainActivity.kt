@@ -29,6 +29,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 @Composable
 fun greeting(name: String){
     Text(text = "Welcome to jetpack $name", color = Color.Red, fontSize = 22.sp, fontWeight = FontWeight.Bold)
