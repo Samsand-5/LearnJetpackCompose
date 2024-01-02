@@ -41,7 +41,8 @@ class MainActivity : ComponentActivity() {
 //                  backgroundColor = Color.Red
 //            )
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-                Text(text = "hello")
+                Text(text = "hello", modifier = Modifier.align(Alignment.TopCenter))
+                Text(text = "welcome",modifier = Modifier.align(Alignment.TopEnd))
             }
             }
         }
