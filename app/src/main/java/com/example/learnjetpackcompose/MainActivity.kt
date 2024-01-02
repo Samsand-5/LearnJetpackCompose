@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -19,10 +20,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent{
-            greeting(name = "World")
-            Button(onClick = { println("click") }, content = {
-              Text(text = "button")
-            })
+//            greeting(name = "World")
+//            Button(onClick = { println("click") }, content = {
+//              Text(text = "button")
+//            })
 //            Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null, tint = Color.Black )
 //            Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = null)
 //            TextField(value = "", onValueChange ={}, label = {
@@ -38,6 +39,9 @@ class MainActivity : ComponentActivity() {
 //                  },
 //                  backgroundColor = Color.Red
 //            )
+            Box(modifier = Modifier.fillMaxSize()){
+                Text(text = "hello")
+            }
             }
         }
     }
