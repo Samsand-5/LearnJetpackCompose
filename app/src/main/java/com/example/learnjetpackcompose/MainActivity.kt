@@ -1,11 +1,13 @@
 package com.example.learnjetpackcompose
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -78,12 +80,24 @@ class MainActivity : ComponentActivity() {
 
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center ){
                     
-                    Box(
+                 /*   Box(
                         modifier = Modifier
                             .size(100.dp)
                             .clip(RoundedCornerShape(10.dp))
                             .border(width = 3.dp, shape = RoundedCornerShape(10.dp), color = Color.Red)
-                            .background(Color.Green))
+                            .background(Color.Green))  */
+
+                    Box(modifier = Modifier
+                        .width(100.dp)
+                        .height(100.dp)
+                        .clip(RoundedCornerShape(10.dp))
+                        .background(Color.Cyan)
+                        .clickable {
+                                   Log.d("test","Click")
+                        },
+                    contentAlignment = Alignment.Center){
+                        Text(text = "Press Me", color = Color.White)
+                    }
                     
                 }
 
