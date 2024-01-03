@@ -78,7 +78,7 @@ class MainActivity : ComponentActivity() {
                         .fillMaxWidth()
                         .background(color = Color.Red, shape = RectangleShape)) */
 
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center ){
+             /*   Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center ){
                     
                  /*   Box(
                         modifier = Modifier
@@ -87,7 +87,7 @@ class MainActivity : ComponentActivity() {
                             .border(width = 3.dp, shape = RoundedCornerShape(10.dp), color = Color.Red)
                             .background(Color.Green))  */
 
-                    Box(modifier = Modifier
+                 /*   Box(modifier = Modifier
                         .width(100.dp)
                         .height(100.dp)
                         .clip(RoundedCornerShape(10.dp))
@@ -97,8 +97,25 @@ class MainActivity : ComponentActivity() {
                         },
                     contentAlignment = Alignment.Center){
                         Text(text = "Press Me", color = Color.White)
-                    }
+                    }  */
+
                     
+                } */
+
+                Row(modifier = Modifier.fillMaxWidth()){
+
+                    Box(modifier = Modifier
+                        .background(Color.Red)
+                        .height(100.dp)
+                        .weight(1f))
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    Box(modifier = Modifier
+                        .background(Color.Red)
+                        .height(100.dp)
+                        .weight(1f))
+
                 }
 
             }
