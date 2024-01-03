@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -44,7 +46,13 @@ class MainActivity : ComponentActivity() {
 //                Text(text = "hello", modifier = Modifier.align(Alignment.TopCenter))
 //                Text(text = "welcome",modifier = Modifier.align(Alignment.TopEnd))
 //            }
-
+             Column(
+                 modifier = Modifier.fillMaxSize(),
+                 verticalArrangement = Arrangement.Top
+             ){
+                 Text(text = "hello")
+                 Text(text = "welcome")
+             }
             }
         }
     }
