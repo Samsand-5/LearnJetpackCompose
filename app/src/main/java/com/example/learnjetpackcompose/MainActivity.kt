@@ -66,8 +66,10 @@ class MainActivity : ComponentActivity() {
 //              }
 
                 Box(
-                    Modifier.size(100.dp).
-                background(color = Color.Red, shape = RectangleShape))
+                    Modifier
+                        .fillMaxHeight(0.5f)
+                        .fillMaxWidth()
+                        .background(color = Color.Red, shape = RectangleShape))
             }
             }
         }
