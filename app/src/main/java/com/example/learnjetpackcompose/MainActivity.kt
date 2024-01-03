@@ -102,7 +102,7 @@ class MainActivity : ComponentActivity() {
                     
                 } */
 
-                Row(modifier = Modifier.fillMaxWidth()){
+ /*               Row(modifier = Modifier.fillMaxWidth()){
 
                     Box(modifier = Modifier
                         .background(Color.Red)
@@ -116,7 +116,7 @@ class MainActivity : ComponentActivity() {
                         .height(100.dp)
                         .weight(1f))
 
-                }
+                }  */
 
             }
             }
