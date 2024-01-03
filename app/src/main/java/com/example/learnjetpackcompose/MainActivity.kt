@@ -6,10 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
@@ -72,7 +74,15 @@ class MainActivity : ComponentActivity() {
                         .fillMaxWidth()
                         .background(color = Color.Red, shape = RectangleShape)) */
 
-
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center ){
+                    
+                    Box(
+                        modifier = Modifier
+                            .size(100.dp)
+                            .clip(CircleShape)
+                            .background(Color.Green))
+                    
+                }
 
             }
             }
