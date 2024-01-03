@@ -48,8 +48,9 @@ class MainActivity : ComponentActivity() {
 //            }
              Column(
                  modifier = Modifier.fillMaxSize(),
-                 verticalArrangement = Arrangement.Top,
-                 horizontalAlignment = Alignment.CenterHorizontally
+//               verticalArrangement = Arrangement.Top,
+//               horizontalAlignment = Alignment.CenterHorizontally,
+
              ){
                  Text(text = "hello")
                  Text(text = "welcome")
