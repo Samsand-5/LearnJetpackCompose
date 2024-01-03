@@ -65,12 +65,15 @@ class MainActivity : ComponentActivity() {
 //                  Text(text = "welcome")
 //              }
 
-                Box(
+/*                Box(
                     Modifier
                         .padding(start = 10.dp, end = 10.dp, top = 10.dp)
                         .fillMaxHeight(0.5f)
                         .fillMaxWidth()
-                        .background(color = Color.Red, shape = RectangleShape))
+                        .background(color = Color.Red, shape = RectangleShape)) */
+
+
+
             }
             }
         }
