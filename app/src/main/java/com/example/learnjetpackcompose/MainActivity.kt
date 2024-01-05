@@ -35,14 +35,14 @@ import com.example.learnjetpackcompose.ui.theme.LearnJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
 
-    val viewModel by lazy {
+   /* val viewModel by lazy {
         ViewModelProvider(this).get(MyViewModel::class.java)
-    }
+    } */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent{
 
-            val state = viewModel.state.value
+           // val state = viewModel.state.value
             LearnJetpackComposeTheme() {
 
 //            greeting(name = "World")
@@ -154,7 +154,7 @@ class MainActivity : ComponentActivity() {
                 // statesLess understanding
                 //Simple app to store name in list and show it
 
-                Column(modifier = Modifier.fillMaxSize()){
+               /* Column(modifier = Modifier.fillMaxSize()){
 
                     LazyColumn(modifier = Modifier
                         .fillMaxWidth()
@@ -174,7 +174,7 @@ class MainActivity : ComponentActivity() {
                             viewModel.updateText("")
                         }
                     )
-               }
+               } */
 
 
             }
@@ -189,7 +189,7 @@ class MainActivity : ComponentActivity() {
 
 //Stateless function called from above
 
-
+/*
 @Composable
 fun MyTextField(
     textValue: String,
@@ -210,4 +210,4 @@ fun MyTextField(
                 modifier = Modifier.clickable { onAddClick() })
         }
     )
-}
+} */
