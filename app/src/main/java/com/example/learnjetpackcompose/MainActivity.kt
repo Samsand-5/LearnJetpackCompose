@@ -21,10 +21,12 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
@@ -42,6 +44,7 @@ class MainActivity : ComponentActivity() {
    /* val viewModel by lazy {
         ViewModelProvider(this).get(MyViewModel::class.java)
     } */
+    @OptIn(ExperimentalTextApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent{
@@ -180,20 +183,31 @@ class MainActivity : ComponentActivity() {
                     )
                } */
 
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                Box(modifier = Modifier.fillMaxSize().background(Color.Black), contentAlignment = Alignment.Center){
                     
                    /* Text(text = stringResource(id = R.string.learn_jetpack_compose).plus("").repeat(20),
                     maxLines = 3,
                     overflow = TextOverflow.Ellipsis) */
                     
-                    Text(
+                   /* Text(
                         text = "Learn Jetpack Compose",
                         color = Color.Magenta,
                         fontSize = 32.sp,
                         textDecoration = TextDecoration.Underline,
                         textAlign = TextAlign.Start,
                         modifier = Modifier.fillMaxWidth()
-                    )
+                    ) */
+
+                    val annotatedString = buildAnnotatedString {
+                        blueGradientText("Learn")
+                        append("\n\n")
+                        pinkGradientText("Jetpack")
+                        append("\n\n")
+                        blueGradientText("Compose")
+
+                    }
+                    
+                    Text(text = annotatedString)
                     
                 } 
                 
@@ -201,7 +215,43 @@ class MainActivity : ComponentActivity() {
             }
             }
         }
+
+    @OptIn(ExperimentalTextApi::class)
+    private fun AnnotatedString.Builder.blueGradientText(text: String) {
+        withStyle(
+            style = SpanStyle(
+                brush = Brush.linearGradient(
+                    colors = listOf(
+                        Color(0xFF2788C7),
+                        Color(0xFF00BB04)
+                    )
+                ),
+                fontSize = 42.sp,
+                fontWeight = FontWeight.Medium
+            )
+        ) {
+            append(text)
+        }
     }
+
+    @OptIn(ExperimentalTextApi::class)
+    private fun AnnotatedString.Builder.pinkGradientText(text: String) {
+        withStyle(
+            style = SpanStyle(
+                brush = Brush.linearGradient(
+                    colors = listOf(
+                        Color(0xFFFF3BB5),
+                        Color(0xFF00BB04)
+                    )
+                ),
+                fontSize = 48.sp,
+                fontWeight = FontWeight.Medium
+            )
+        ) {
+            append(text)
+        }
+    }
+}
 
 //@Composable
 //fun greeting(name: String){
