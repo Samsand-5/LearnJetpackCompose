@@ -125,6 +125,7 @@ class MainActivity : ComponentActivity() {
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
                     val textState = mutableStateOf("")
+
                     TextField(value = textState.value,
                         onValueChange = {
                             textState.value = it
