@@ -133,7 +133,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxWidth())
                     
                 }
-
             }
             }
         }
