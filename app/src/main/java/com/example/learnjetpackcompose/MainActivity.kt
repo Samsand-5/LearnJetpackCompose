@@ -26,6 +26,8 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -180,11 +182,20 @@ class MainActivity : ComponentActivity() {
 
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
                     
-                    Text(text = stringResource(id = R.string.learn_jetpack_compose).plus("").repeat(20),
+                   /* Text(text = stringResource(id = R.string.learn_jetpack_compose).plus("").repeat(20),
                     maxLines = 3,
-                    overflow = TextOverflow.Ellipsis)
+                    overflow = TextOverflow.Ellipsis) */
                     
-                }
+                    Text(
+                        text = "Learn Jetpack Compose",
+                        color = Color.Magenta,
+                        fontSize = 32.sp,
+                        textDecoration = TextDecoration.Underline,
+                        textAlign = TextAlign.Start,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    
+                } 
                 
                 
             }
