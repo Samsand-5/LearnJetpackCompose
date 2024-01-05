@@ -199,26 +199,23 @@ class MainActivity : ComponentActivity() {
                     )
                     }   */
 
-                    Box(modifier = Modifier.fillMaxSize().background(Color.Black), contentAlignment = Alignment.Center){
+                  /*  Box(modifier = Modifier.fillMaxSize().background(Color.Black), contentAlignment = Alignment.Center){
                     val annotatedString = buildAnnotatedString {
                         blueGradientText("Learn")
                         append("\n\n")
                         pinkGradientText("Jetpack")
                         append("\n\n")
                         blueGradientText("Compose")
-
                     }
-                    
                     Text(text = annotatedString)
-                    
-                } 
+                } */
                 
                 
             }
             }
         }
 
-    @OptIn(ExperimentalTextApi::class)
+  /*  @OptIn(ExperimentalTextApi::class)
     private fun AnnotatedString.Builder.blueGradientText(text: String) {
         withStyle(
             style = SpanStyle(
@@ -252,7 +249,7 @@ class MainActivity : ComponentActivity() {
         ) {
             append(text)
         }
-    }
+    } */
 }
 
 //@Composable
