@@ -10,9 +10,12 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -140,18 +143,39 @@ class MainActivity : ComponentActivity() {
                 }  */
 
                 // statesLess understanding
-               /* Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                //Simple app to store name in list and show it
+
+               /* Column(modifier = Modifier.fillMaxSize()){
 
                     var textState by remember{
                         mutableStateOf("")
                     }
+
+                    val namesListState = remember {
+                        mutableStateListOf<String>()
+                    }
+
+                    LazyColumn(modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f)) {
+                        items(namesListState.size){
+                            Text(text = namesListState[it])
+                        }
+                    }
+                    
                     MyTextField(
                         textState,
                         onValueChanged = {
                             textState = it
+                        },
+                        onAddClick = {
+                            namesListState.add(textState)
+                            textState = ""
                         }
                     )
                } */
+
+
             }
             }
         }
@@ -163,10 +187,13 @@ class MainActivity : ComponentActivity() {
 //}
 
 //Stateless function called from above
+
+/*
 @Composable
 fun MyTextField(
     textValue: String,
-    onValueChanged: (String) -> Unit
+    onValueChanged: (String) -> Unit,
+    onAddClick: () -> Unit
 ) {
 
     TextField(
@@ -174,6 +201,12 @@ fun MyTextField(
         onValueChange = {
             onValueChanged(it)
         },
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth(),
+        trailingIcon = {
+            Icon(
+                imageVector = Icons.Default.Add,
+                contentDescription = null,
+                modifier = Modifier.clickable { onAddClick() })
+        }
     )
-}
+} */
