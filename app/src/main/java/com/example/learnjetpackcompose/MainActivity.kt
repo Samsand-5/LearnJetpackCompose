@@ -120,7 +120,7 @@ class MainActivity : ComponentActivity() {
 
                 }  */
 
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+               /* Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
                     var textState by remember{
                         mutableStateOf("")
@@ -132,6 +132,10 @@ class MainActivity : ComponentActivity() {
                     },
                     modifier = Modifier.fillMaxWidth())
                     
+                }  */
+
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+
                 }
             }
             }
@@ -142,3 +146,18 @@ class MainActivity : ComponentActivity() {
 //fun greeting(name: String){
 //    Text(text = "Welcome to jetpack $name", color = Color.Red, fontSize = 22.sp, fontWeight = FontWeight.Bold)
 //}
+
+@Composable
+fun MyTextField() {
+    var textState by remember {
+        mutableStateOf("")
+    }
+
+    TextField(
+        value = textState,
+        onValueChange = {
+            textState = it
+        },
+        modifier = Modifier.fillMaxWidth()
+    )
+}
