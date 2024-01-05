@@ -37,11 +37,13 @@ class MainActivity : ComponentActivity() {
 //            Button(onClick = { println("click") }, content = {
 //              Text(text = "button")
 //            })
+
 //            Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null, tint = Color.Black )
 //            Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = null)
 //            TextField(value = "", onValueChange ={}, label = {
 //                Text(text = "label")
 //            })
+
 //            FloatingActionButton(onClick = { println("click") }) {
 //                Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null )
 //              ExtendedFloatingActionButton(text = {
@@ -52,10 +54,12 @@ class MainActivity : ComponentActivity() {
 //                  },
 //                  backgroundColor = Color.Red
 //            )
+
 //            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 //                Text(text = "hello", modifier = Modifier.align(Alignment.TopCenter))
 //                Text(text = "welcome",modifier = Modifier.align(Alignment.TopEnd))
 //            }
+
 //             Column(
 //                 modifier = Modifier.fillMaxSize(),
 //               verticalArrangement = Arrangement.Top,
@@ -64,6 +68,7 @@ class MainActivity : ComponentActivity() {
 //               Text(text = "hello")
 //               Text(text = "welcome")
 //            }
+
 //              Row(
 //                  modifier = Modifier.fillMaxSize(),
 //                  horizontalArrangement = Arrangement.Center,
@@ -134,7 +139,8 @@ class MainActivity : ComponentActivity() {
                     
                 }  */
 
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                // statesLess understanding
+               /* Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
                     var textState by remember{
                         mutableStateOf("")
@@ -145,7 +151,7 @@ class MainActivity : ComponentActivity() {
                             textState = it
                         }
                     )
-                }
+               } */
             }
             }
         }
@@ -156,6 +162,7 @@ class MainActivity : ComponentActivity() {
 //    Text(text = "Welcome to jetpack $name", color = Color.Red, fontSize = 22.sp, fontWeight = FontWeight.Bold)
 //}
 
+//Stateless function called from above
 @Composable
 fun MyTextField(
     textValue: String,
