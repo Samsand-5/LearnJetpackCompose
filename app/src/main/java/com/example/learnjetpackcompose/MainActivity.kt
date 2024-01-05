@@ -13,10 +13,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -125,13 +122,13 @@ class MainActivity : ComponentActivity() {
 
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
-                    val textState = remember{
+                    var textState by remember{
                         mutableStateOf("")
                     }
 
-                    TextField(value = textState.value,
+                    TextField(value = textState,
                         onValueChange = {
-                            textState.value = it
+                            textState = it
                     },
                     modifier = Modifier.fillMaxWidth())
                     
