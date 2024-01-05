@@ -28,13 +28,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
 import com.example.learnjetpackcompose.ui.theme.LearnJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
 
+    val viewModel by lazy {
+        ViewModelProvider(this).get(MyViewModel::class.java)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent{
+
+            val state = viewModel.state.value
             LearnJetpackComposeTheme() {
 
 //            greeting(name = "World")
@@ -148,30 +156,22 @@ class MainActivity : ComponentActivity() {
 
                 Column(modifier = Modifier.fillMaxSize()){
 
-                    var textState by rememberSaveable{
-                        mutableStateOf("")
-                    }
-
-                    val namesListState = remember {
-                        mutableStateListOf<String>()
-                    }
-
                     LazyColumn(modifier = Modifier
                         .fillMaxWidth()
                         .weight(1f)) {
-                        items(namesListState.size){
-                            Text(text = namesListState[it])
+                        items(state.namesList.size){
+                            Text(text = state.namesList[it])
                         }
                     }
                     
                     MyTextField(
-                        textState,
+                        textValue = state.text,
                         onValueChanged = {
-                            textState = it
+                            viewModel.updateText(it)
                         },
                         onAddClick = {
-                            namesListState.add(textState)
-                            textState = ""
+                            viewModel.updateNamesList(state.text)
+                            viewModel.updateText("")
                         }
                     )
                }
