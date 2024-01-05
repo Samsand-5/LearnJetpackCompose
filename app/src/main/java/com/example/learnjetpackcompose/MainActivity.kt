@@ -1,5 +1,6 @@
 package com.example.learnjetpackcompose
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -13,6 +14,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -26,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import com.example.learnjetpackcompose.ui.theme.LearnJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
+    @SuppressLint("UnrememberedMutableState")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent{
@@ -120,9 +124,10 @@ class MainActivity : ComponentActivity() {
 
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
-                    
-                    TextField(value = "", onValueChange ={
-
+                    val textState = mutableStateOf("")
+                    TextField(value = textState.value,
+                        onValueChange = {
+                            textState.value = it
                     },
                     modifier = Modifier.fillMaxWidth())
                     
