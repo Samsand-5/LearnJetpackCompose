@@ -135,7 +135,16 @@ class MainActivity : ComponentActivity() {
                 }  */
 
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-                    MyTextField()
+
+                    var textState by remember{
+                        mutableStateOf("")
+                    }
+                    MyTextField(
+                        textState,
+                        onValueChanged = {
+                            textState = it
+                        }
+                    )
                 }
             }
             }
@@ -148,15 +157,15 @@ class MainActivity : ComponentActivity() {
 //}
 
 @Composable
-fun MyTextField() {
-    var textState by remember {
-        mutableStateOf("")
-    }
+fun MyTextField(
+    textValue: String,
+    onValueChanged: (String) -> Unit
+) {
 
     TextField(
-        value = textState,
+        value = textValue,
         onValueChange = {
-            textState = it
+            onValueChanged(it)
         },
         modifier = Modifier.fillMaxWidth()
     )
