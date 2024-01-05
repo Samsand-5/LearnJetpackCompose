@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LearnJetpackCompose</string>
+    <string name="learn_jetpack_compose">Learn_Jetpack_Compose</string>
 </resources>
