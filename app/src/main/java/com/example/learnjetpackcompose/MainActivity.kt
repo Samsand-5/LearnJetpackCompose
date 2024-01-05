@@ -16,6 +16,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -29,7 +30,7 @@ import androidx.compose.ui.unit.sp
 import com.example.learnjetpackcompose.ui.theme.LearnJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
-    @SuppressLint("UnrememberedMutableState")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent{
@@ -124,7 +125,9 @@ class MainActivity : ComponentActivity() {
 
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
-                    val textState = mutableStateOf("")
+                    val textState = remember{
+                        mutableStateOf("")
+                    }
 
                     TextField(value = textState.value,
                         onValueChange = {
