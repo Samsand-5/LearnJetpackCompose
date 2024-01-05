@@ -11,9 +11,9 @@ class MyViewModel: ViewModel() {
         state.value = state.value.copy(text = newText)
     }
 
-    fun updateNamesList(newName: String){
+    fun updateNamesList(){
         val currentList = state.value.namesList
-        currentList.add(newName)
+        currentList.add(state.value.text)
         state.value = state.value.copy(namesList = currentList)
     }
 }

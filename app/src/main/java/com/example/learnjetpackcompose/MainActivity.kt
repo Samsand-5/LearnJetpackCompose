@@ -170,7 +170,7 @@ class MainActivity : ComponentActivity() {
                             viewModel.updateText(it)
                         },
                         onAddClick = {
-                            viewModel.updateNamesList(state.text)
+                            viewModel.updateNamesList()
                             viewModel.updateText("")
                         }
                     )
