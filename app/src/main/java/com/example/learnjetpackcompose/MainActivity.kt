@@ -145,7 +145,7 @@ class MainActivity : ComponentActivity() {
                 // statesLess understanding
                 //Simple app to store name in list and show it
 
-               /* Column(modifier = Modifier.fillMaxSize()){
+                Column(modifier = Modifier.fillMaxSize()){
 
                     var textState by remember{
                         mutableStateOf("")
@@ -173,7 +173,7 @@ class MainActivity : ComponentActivity() {
                             textState = ""
                         }
                     )
-               } */
+               }
 
 
             }
@@ -188,7 +188,7 @@ class MainActivity : ComponentActivity() {
 
 //Stateless function called from above
 
-/*
+
 @Composable
 fun MyTextField(
     textValue: String,
@@ -209,4 +209,4 @@ fun MyTextField(
                 modifier = Modifier.clickable { onAddClick() })
         }
     )
-} */
+}
