@@ -118,6 +118,16 @@ class MainActivity : ComponentActivity() {
 
                 }  */
 
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+
+                    
+                    TextField(value = "", onValueChange ={
+
+                    },
+                    modifier = Modifier.fillMaxWidth())
+                    
+                }
+
             }
             }
         }
