@@ -38,6 +38,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import com.example.learnjetpackcompose.ui.theme.LearnJetpackComposeTheme
+import com.example.learnjetpackcompose.ui.theme.MyCustomCard
+import com.example.learnjetpackcompose.ui.theme.Publisher
 
 class MainActivity : ComponentActivity() {
 
@@ -210,7 +212,25 @@ class MainActivity : ComponentActivity() {
                     Text(text = annotatedString)
                 } */
                 
-                
+                //making post card
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Black.copy(0.8f)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    MyCustomCard(
+                        modifier = Modifier.fillMaxSize(fraction = 0.8f),
+                        image = R.drawable.couple,
+                        title = "Travelling Together",
+                        text = "Always ready to explore and enjoy the beauty of mountains to breadth fresh air and detox toxicity",
+                        publisher = Publisher(
+                            name = "Soumyodip Sutradhar",
+                            job = "UI & UX Designer",
+                            image = R.drawable.soumyodipsutradhar
+                        )
+                    )
+                }
             }
             }
         }
