@@ -1,13 +1,15 @@
 package com.example.learnjetpackcompose.ui.theme
 
 import androidx.annotation.DrawableRes
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -16,6 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -37,8 +40,12 @@ fun MyCustomCard(
     publisher: Publisher
 ) {
 
+    var showFullText by remember {
+        mutableStateOf(false)
+    }
+
     Card(
-        modifier = modifier,
+        modifier = modifier.animateContentSize(),
         shape = MaterialTheme.shapes.medium,
         backgroundColor = mutedBlack
     ) {
@@ -64,10 +71,15 @@ fun MyCustomCard(
                 Spacer(modifier = Modifier.height(10.dp))
 
                 Text(
+                    modifier = Modifier.clickable {
+                                                  showFullText = !showFullText
+                    },
                     text = text,
                     color = Color.White.copy(alpha = 0.7f),
                     fontSize = 16.sp,
-                    fontWeight = FontWeight.Medium
+                    fontWeight = FontWeight.Medium,
+                    maxLines = if(showFullText) 100 else 2,
+                    overflow = TextOverflow.Ellipsis
                 )
 
                 Spacer(modifier = Modifier.height(30.dp))

@@ -223,7 +223,9 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(fraction = 0.8f),
                         image = R.drawable.couple,
                         title = "Travelling Together",
-                        text = "Always ready to explore and enjoy the beauty of mountains to breadth fresh air and detox toxicity",
+                        text = "Always ready to explore and enjoy the beauty of mountains to breadth fresh air and detox toxicity" +
+                                "You don't climb mountains without a team, you don't climb mountains without being fit, you don't climb mountains without being prepared and you don't climb mountains without balancing the risks and rewards. And you never climb a mountain on accident—it has to be intentional"
+                        ,
                         publisher = Publisher(
                             name = "Soumyodip Sutradhar",
                             job = "UI & UX Designer",
