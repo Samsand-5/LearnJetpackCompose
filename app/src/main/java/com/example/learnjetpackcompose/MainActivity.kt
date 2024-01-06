@@ -237,7 +237,7 @@ class MainActivity : ComponentActivity() {
                     )
                 } */
 
-                Box(
+              /*  Box(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
@@ -262,9 +262,9 @@ class MainActivity : ComponentActivity() {
                         Icon(painter = painterResource(id = R.drawable.ic_android_icon), contentDescription = null )
                         Text(text = "Click")
                     }
-                }
+                } */
 
-            }
+              }
             }
         }
 
