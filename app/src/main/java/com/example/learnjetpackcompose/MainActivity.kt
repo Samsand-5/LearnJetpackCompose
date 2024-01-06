@@ -37,7 +37,9 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import androidx.compose.material3.Button
 import com.example.learnjetpackcompose.ui.theme.LearnJetpackComposeTheme
+import androidx.compose.material3.ButtonDefaults
 import com.example.learnjetpackcompose.ui.theme.MyCustomCard
 import com.example.learnjetpackcompose.ui.theme.Publisher
 
@@ -239,9 +241,26 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
-                    Button(onClick = {  }
+
+                    Button(
+                        modifier = Modifier
+                            .height(50.dp)
+                            .width(140.dp),
+                        shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp),
+                        enabled = true,
+                        elevation = ButtonDefaults.buttonElevation(
+                            defaultElevation = 30.dp
+                        ),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color(0xFF2D4356),
+                            contentColor = Color.Green,
+                            disabledContainerColor = Color.LightGray,
+                            disabledContentColor = Color.White
+                        ),
+                        onClick = {  }
                     ) {
-                        Text(text = "Click Me")
+                        Icon(painter = painterResource(id = R.drawable.ic_android_icon), contentDescription = null )
+                        Text(text = "Click")
                     }
                 }
 
