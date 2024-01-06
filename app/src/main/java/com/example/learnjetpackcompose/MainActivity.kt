@@ -211,7 +211,8 @@ class MainActivity : ComponentActivity() {
                     }
                     Text(text = annotatedString)
                 } */
-                
+
+                /*
                 //making post card
                 Box(
                     modifier = Modifier
@@ -232,7 +233,18 @@ class MainActivity : ComponentActivity() {
                             image = R.drawable.soumyodipsutradhar
                         )
                     )
+                } */
+
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Button(onClick = {  }
+                    ) {
+                        Text(text = "Click Me")
+                    }
                 }
+
             }
             }
         }
