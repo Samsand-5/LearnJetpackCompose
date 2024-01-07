@@ -42,6 +42,7 @@ import com.example.learnjetpackcompose.ui.theme.LearnJetpackComposeTheme
 import androidx.compose.material3.ButtonDefaults
 import com.example.learnjetpackcompose.ui.theme.MyCustomCard
 import com.example.learnjetpackcompose.ui.theme.Publisher
+import androidx.compose.runtime.getValue
 
 class MainActivity : ComponentActivity() {
 
@@ -263,6 +264,18 @@ class MainActivity : ComponentActivity() {
                         Text(text = "Click")
                     }
                 } */
+
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+
+                    var text by remember {
+                        mutableStateOf("")
+                    }
+                }
+
 
               }
             }
