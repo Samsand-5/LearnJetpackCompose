@@ -282,7 +282,9 @@ class MainActivity : ComponentActivity() {
                         mutableStateOf("")
                     }
 
-
+                    var isPasswordVisible by remember {
+                        mutableStateOf(false)
+                    }
 
                     TextField(
                         value = text,
@@ -291,8 +293,8 @@ class MainActivity : ComponentActivity() {
                             Icon(painter = painterResource(id = R.drawable.ic_android_icon), contentDescription = null )
                         },
                         trailingIcon = {
-                            TextButton(onClick = { /*TODO*/ }) {
-                                Text(text = "Show")
+                            TextButton(onClick = { isPasswordVisible = !isPasswordVisible }) {
+                                Text(text = if(isPasswordVisible) "Hide" else "Show")
                             }
                         },
                         colors = TextFieldDefaults.textFieldColors(
