@@ -43,6 +43,8 @@ import androidx.compose.material3.ButtonDefaults
 import com.example.learnjetpackcompose.ui.theme.MyCustomCard
 import com.example.learnjetpackcompose.ui.theme.Publisher
 import androidx.compose.runtime.getValue
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 
 class MainActivity : ComponentActivity() {
 
@@ -274,6 +276,22 @@ class MainActivity : ComponentActivity() {
                     var text by remember {
                         mutableStateOf("")
                     }
+
+                    TextField(
+                        value = text,
+                        onValueChange = {text = it },
+                        leadingIcon = {
+                            Icon(painter = painterResource(id = R.drawable.ic_android_icon), contentDescription = null )
+                        },
+                        trailingIcon = {
+                            TextButton(onClick = { /*TODO*/ }) {
+                                Text(text = "Show")
+                            }
+                        },
+                        colors = TextFieldDefaults.textFieldColors(
+
+                        )
+                    )
                 }
 
 
