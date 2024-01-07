@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -45,6 +47,9 @@ import com.example.learnjetpackcompose.ui.theme.Publisher
 import androidx.compose.runtime.getValue
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 
 class MainActivity : ComponentActivity() {
 
@@ -277,6 +282,8 @@ class MainActivity : ComponentActivity() {
                         mutableStateOf("")
                     }
 
+
+
                     TextField(
                         value = text,
                         onValueChange = {text = it },
@@ -296,6 +303,17 @@ class MainActivity : ComponentActivity() {
                         placeholder = {
                             Text(text = "password")
                         },
+                        visualTransformation = PasswordVisualTransformation(),
+                        keyboardOptions = KeyboardOptions(
+                            autoCorrect = false,
+                            keyboardType = KeyboardType.NumberPassword,
+                            imeAction = ImeAction.Go
+                        ),
+                        keyboardActions = KeyboardActions(
+                            onGo = {
+                                Log.e("test", "OnGo Click")
+                            }
+                        )
                     )
                 }
 
