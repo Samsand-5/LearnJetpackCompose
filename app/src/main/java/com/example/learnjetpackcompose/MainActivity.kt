@@ -289,7 +289,8 @@ class MainActivity : ComponentActivity() {
                             }
                         },
                         colors = TextFieldDefaults.textFieldColors(
-
+                            cursorColor = Color.Red,
+                            backgroundColor = Color.Transparent
                         )
                     )
                 }
