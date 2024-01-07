@@ -289,9 +289,13 @@ class MainActivity : ComponentActivity() {
                             }
                         },
                         colors = TextFieldDefaults.textFieldColors(
-                            cursorColor = Color.Red,
-                            backgroundColor = Color.Transparent
-                        )
+                          /*  cursorColor = Color.Red,
+                            backgroundColor = Color.Transparent */
+                        ),
+                        singleLine = true,
+                        placeholder = {
+                            Text(text = "password")
+                        },
                     )
                 }
 
