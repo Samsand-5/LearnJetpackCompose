@@ -50,6 +50,7 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 
 class MainActivity : ComponentActivity() {
 
@@ -305,7 +306,7 @@ class MainActivity : ComponentActivity() {
                         placeholder = {
                             Text(text = "password")
                         },
-                        visualTransformation = PasswordVisualTransformation(),
+                        visualTransformation = if(isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                         keyboardOptions = KeyboardOptions(
                             autoCorrect = false,
                             keyboardType = KeyboardType.NumberPassword,
