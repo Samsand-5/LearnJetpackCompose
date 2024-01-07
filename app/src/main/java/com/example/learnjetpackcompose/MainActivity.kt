@@ -47,10 +47,13 @@ import com.example.learnjetpackcompose.ui.theme.Publisher
 import androidx.compose.runtime.getValue
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.material3.OutlinedTextField
 
 class MainActivity : ComponentActivity() {
 
@@ -287,7 +290,11 @@ class MainActivity : ComponentActivity() {
                         mutableStateOf(false)
                     }
 
-                    TextField(
+                    var focusRequester = remember {
+                        FocusRequester()
+                    }
+
+                    androidx.compose.material3.OutlinedTextField(
                         value = text,
                         onValueChange = {text = it },
                         leadingIcon = {
@@ -316,11 +323,14 @@ class MainActivity : ComponentActivity() {
                             onGo = {
                                 Log.e("test", "OnGo Click")
                             }
-                        )
+                        ),
+                        modifier = Modifier.focusRequester(focusRequester)
                     )
+                   Button(onClick = { focusRequester.requestFocus() }) {
+                        Text(text = "Request Focus")
+                    }
                 }
-
-
+                
               }
             }
         }
