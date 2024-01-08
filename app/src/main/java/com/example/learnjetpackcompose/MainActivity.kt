@@ -276,6 +276,8 @@ class MainActivity : ComponentActivity() {
                     }
                 } */
 
+
+                /*
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -329,7 +331,7 @@ class MainActivity : ComponentActivity() {
                    Button(onClick = { focusRequester.requestFocus() }) {
                         Text(text = "Request Focus")
                     }
-                }
+                } */
                 
               }
             }
