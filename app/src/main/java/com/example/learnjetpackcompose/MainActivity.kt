@@ -334,6 +334,7 @@ class MainActivity : ComponentActivity() {
                 } */
             //   }
 
+            /*
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -342,7 +343,11 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center
                 ) {
                     TestMe()
-                }
+                } */
+            
+            LearnJetpackComposeTheme() {
+                
+            }
             }
         }
     }
@@ -414,6 +419,7 @@ fun MyTextField(
     )
 } */
 
+/*
 @Composable
 fun TestMe(){
     val color = if (isSystemInDarkTheme()) Color.Black else Color.LightGray
@@ -438,3 +444,4 @@ fun TestMe(){
 fun TestMePreview(){
     TestMe()
 }
+*/
