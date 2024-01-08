@@ -433,6 +433,7 @@ fun TestMe(){
 @Preview(name = "Light", showBackground = true, widthDp = 200, heightDp = 100)
 @Preview(name = "Light", showBackground = true)
 @Preview(name = "Night", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
+@Preview(name = "Night", uiMode = UI_MODE_NIGHT_YES, showBackground = true, widthDp = 200, heightDp = 100)
 @Composable
 fun TestMePreview(){
     TestMe()
