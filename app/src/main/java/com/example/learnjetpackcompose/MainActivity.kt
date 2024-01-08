@@ -430,8 +430,9 @@ fun TestMe(){
     }
 }
 
-@Preview
-@Preview(uiMode = UI_MODE_NIGHT_YES)
+@Preview(name = "Light", showBackground = true, widthDp = 200, heightDp = 100)
+@Preview(name = "Light", showBackground = true)
+@Preview(name = "Night", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 fun TestMePreview(){
     TestMe()
