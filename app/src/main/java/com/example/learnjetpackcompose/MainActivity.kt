@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
@@ -35,6 +32,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -332,8 +330,16 @@ class MainActivity : ComponentActivity() {
                         Text(text = "Request Focus")
                     }
                 } */
-                
               }
+            
+            Column(modifier = Modifier
+                .fillMaxSize()
+                .background(color = MaterialTheme.colorScheme.background),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                TestMe()
+            }
             }
         }
 
@@ -403,3 +409,19 @@ fun MyTextField(
         }
     )
 } */
+
+@Composable
+fun TestMe(){
+    val color = if (isSystemInDarkTheme()) Color.Black else Color.LightGray
+    Box(
+        modifier = Modifier
+            .size(300.dp)
+            .clip(RoundedCornerShape(10.dp))
+            .background(color = color),
+        contentAlignment = Alignment.Center
+    ){
+        Button(onClick = { /*TODO*/ }) {
+            Text(text = "Test me")
+        }
+    }
+}
