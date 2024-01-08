@@ -45,3 +45,11 @@ fun LearnJetpackComposeTheme(
         content = content
     )
 }
+@Composable
+fun ComposablePreviewTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    dynamicColor: Boolean = true,
+    content: @Composable () -> Unit
+) : Unit{
+
+}

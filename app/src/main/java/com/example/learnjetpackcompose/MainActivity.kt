@@ -1,6 +1,7 @@
 package com.example.learnjetpackcompose
 
 import android.annotation.SuppressLint
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -52,6 +53,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.material3.OutlinedTextField
+import com.example.learnjetpackcompose.ui.theme.ComposablePreviewTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -429,8 +431,8 @@ fun TestMe(){
 }
 
 @Preview
+@Preview(uiMode = UI_MODE_NIGHT_YES)
 @Composable
 fun TestMePreview(){
-
     TestMe()
 }
