@@ -64,9 +64,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            LearnJetpackComposeTheme() {
 
-            // val state = viewModel.state.value
-            //   LearnJetpackComposeTheme() {
+                // val state = viewModel.state.value
+                //   LearnJetpackComposeTheme() {
 
 //            greeting(name = "World")
 //            Button(onClick = { println("click") }, content = {
@@ -120,7 +121,7 @@ class MainActivity : ComponentActivity() {
                         .fillMaxWidth()
                         .background(color = Color.Red, shape = RectangleShape)) */
 
-            /*   Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center ){
+                /*   Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center ){
                     
                  /*   Box(
                         modifier = Modifier
@@ -144,7 +145,7 @@ class MainActivity : ComponentActivity() {
                     
                 } */
 
-            /*               Row(modifier = Modifier.fillMaxWidth()){
+                /*               Row(modifier = Modifier.fillMaxWidth()){
 
                     Box(modifier = Modifier
                         .background(Color.Red)
@@ -160,7 +161,7 @@ class MainActivity : ComponentActivity() {
 
                 }  */
 
-            /* Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                /* Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
                     var textState by remember{
                         mutableStateOf("")
@@ -174,10 +175,10 @@ class MainActivity : ComponentActivity() {
                     
                 }  */
 
-            // statesLess understanding
-            //Simple app to store name in list and show it
+                // statesLess understanding
+                //Simple app to store name in list and show it
 
-            /* Column(modifier = Modifier.fillMaxSize()){
+                /* Column(modifier = Modifier.fillMaxSize()){
 
                     LazyColumn(modifier = Modifier
                         .fillMaxWidth()
@@ -199,7 +200,7 @@ class MainActivity : ComponentActivity() {
                     )
                } */
 
-            /* Box(modifier = Modifier.fillMaxSize().background(Color.Black), contentAlignment = Alignment.Center){
+                /* Box(modifier = Modifier.fillMaxSize().background(Color.Black), contentAlignment = Alignment.Center){
                     
                     Text(text = stringResource(id = R.string.learn_jetpack_compose).plus("").repeat(20),
                     maxLines = 3,
@@ -215,7 +216,7 @@ class MainActivity : ComponentActivity() {
                     )
                     }   */
 
-            /*  Box(modifier = Modifier.fillMaxSize().background(Color.Black), contentAlignment = Alignment.Center){
+                /*  Box(modifier = Modifier.fillMaxSize().background(Color.Black), contentAlignment = Alignment.Center){
                     val annotatedString = buildAnnotatedString {
                         blueGradientText("Learn")
                         append("\n\n")
@@ -226,7 +227,7 @@ class MainActivity : ComponentActivity() {
                     Text(text = annotatedString)
                 } */
 
-            /*
+                /*
                 //making post card
                 Box(
                     modifier = Modifier
@@ -249,7 +250,7 @@ class MainActivity : ComponentActivity() {
                     )
                 } */
 
-            /*  Box(
+                /*  Box(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
@@ -277,7 +278,7 @@ class MainActivity : ComponentActivity() {
                 } */
 
 
-            /*
+                /*
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -332,9 +333,9 @@ class MainActivity : ComponentActivity() {
                         Text(text = "Request Focus")
                     }
                 } */
-            //   }
+                //   }
 
-            /*
+                /*
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -344,13 +345,12 @@ class MainActivity : ComponentActivity() {
                 ) {
                     TestMe()
                 } */
-            
-            LearnJetpackComposeTheme() {
-                
-            }
+
+
             }
         }
     }
+}
 
 
   /*  @OptIn(ExperimentalTextApi::class)
