@@ -352,9 +352,11 @@ class MainActivity : ComponentActivity() {
                     var isContentVisible by remember {
                         mutableStateOf(false)
                     }
-                }
-                Button(onClick = { /*TODO*/ }) {
-                    Text(text = "show/hide")
+                    Button(onClick = {
+                        isContentVisible = !isContentVisible
+                    }) {
+                        Text(text = "show/hide")
+                    }
                 }
             }
         }
