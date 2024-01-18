@@ -357,6 +357,7 @@ class MainActivity : ComponentActivity() {
                     }) {
                         Text(text = "show/hide")
                     }
+                    Spacer(modifier = Modifier.height(10.dp))
                     if(isContentVisible){
                         Box(modifier = Modifier
                             .size(200.dp)
