@@ -348,6 +348,14 @@ class MainActivity : ComponentActivity() {
 
                 // learning animations using jetpack compose
 
+                Column(modifier = Modifier.fillMaxSize()) {
+                    var isContentVisible by remember {
+                        mutableStateOf(false)
+                    }
+                }
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "show/hide")
+                }
             }
         }
     }
