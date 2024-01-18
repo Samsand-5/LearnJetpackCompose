@@ -7,6 +7,8 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -359,7 +361,11 @@ class MainActivity : ComponentActivity() {
                         Text(text = "show/hide")
                     }
                     Spacer(modifier = Modifier.height(10.dp))
-                    AnimatedVisibility(isContentVisible){
+                    AnimatedVisibility(
+                        visible = isContentVisible,
+                        enter = fadeIn(),
+                        exit = fadeOut()
+                    ){
                         Box(modifier = Modifier
                             .size(200.dp)
                             .background(Color.Red)) {
