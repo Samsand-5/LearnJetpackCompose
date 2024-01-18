@@ -6,9 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
+import androidx.compose.animation.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -363,8 +361,8 @@ class MainActivity : ComponentActivity() {
                     Spacer(modifier = Modifier.height(10.dp))
                     AnimatedVisibility(
                         visible = isContentVisible,
-                        enter = fadeIn(),
-                        exit = fadeOut()
+                        enter = fadeIn() + slideInVertically(),
+                        exit = fadeOut() + slideOutVertically()
                     ){
                         Box(modifier = Modifier
                             .size(200.dp)
