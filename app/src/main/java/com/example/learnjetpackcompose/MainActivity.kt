@@ -357,6 +357,13 @@ class MainActivity : ComponentActivity() {
                     }) {
                         Text(text = "show/hide")
                     }
+                    if(isContentVisible){
+                        Box(modifier = Modifier
+                            .size(200.dp)
+                            .background(Color.Red)) {
+
+                        }
+                    }
                 }
             }
         }
