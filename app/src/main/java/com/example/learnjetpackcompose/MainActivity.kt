@@ -389,7 +389,7 @@ class MainActivity : ComponentActivity() {
                             .background(Color.LightGray)
                             .clickable {
                                isAllTextVisible = !isAllTextVisible
-                            },
+                            }.animateContentSize(),
                         maxLines = if(isAllTextVisible) Int.MAX_VALUE else 2
                     )
                 }
