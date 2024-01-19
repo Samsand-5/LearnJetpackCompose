@@ -388,7 +388,7 @@ class MainActivity : ComponentActivity() {
                             .padding(5.dp)
                             .background(Color.LightGray)
                             .clickable {
-
+                               isAllTextVisible = !isAllTextVisible
                             },
                         maxLines = if(isAllTextVisible) Int.MAX_VALUE else 2
                     )
