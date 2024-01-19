@@ -7,6 +7,8 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.*
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -389,7 +391,12 @@ class MainActivity : ComponentActivity() {
                             .background(Color.LightGray)
                             .clickable {
                                isAllTextVisible = !isAllTextVisible
-                            }.animateContentSize(),
+                            }.animateContentSize(
+                                animationSpec = tween(
+                                    durationMillis = 1000,
+                                    easing = LinearEasing
+                                )
+                            ),
                         maxLines = if(isAllTextVisible) Int.MAX_VALUE else 2
                     )
                 }
