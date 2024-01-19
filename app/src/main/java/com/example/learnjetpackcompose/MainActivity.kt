@@ -376,6 +376,7 @@ class MainActivity : ComponentActivity() {
                     }
                }  */
 
+                /*
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -400,12 +401,22 @@ class MainActivity : ComponentActivity() {
                                     easing = LinearEasing
                                 ) */
 
+                                /*
                                   animationSpec = spring(
                                       dampingRatio = Spring.DampingRatioLowBouncy, stiffness = Spring.StiffnessMediumLow
                                   )
+                                  */
                             ),
                         maxLines = if(isAllTextVisible) Int.MAX_VALUE else 2
                     )
+                } */
+
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+
                 }
             }
         }
