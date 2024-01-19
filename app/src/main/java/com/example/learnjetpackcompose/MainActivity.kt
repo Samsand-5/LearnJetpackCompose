@@ -8,6 +8,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.*
 import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -392,10 +394,15 @@ class MainActivity : ComponentActivity() {
                             .clickable {
                                isAllTextVisible = !isAllTextVisible
                             }.animateContentSize(
-                                animationSpec = tween(
+
+                               /* animationSpec = tween(
                                     durationMillis = 200,
                                     easing = LinearEasing
-                                )
+                                ) */
+
+                                  animationSpec = spring(
+                                      dampingRatio = Spring.DampingRatioLowBouncy, stiffness = Spring.StiffnessMediumLow
+                                  )
                             ),
                         maxLines = if(isAllTextVisible) Int.MAX_VALUE else 2
                     )
