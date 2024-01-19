@@ -393,7 +393,7 @@ class MainActivity : ComponentActivity() {
                                isAllTextVisible = !isAllTextVisible
                             }.animateContentSize(
                                 animationSpec = tween(
-                                    durationMillis = 1000,
+                                    durationMillis = 200,
                                     easing = LinearEasing
                                 )
                             ),
