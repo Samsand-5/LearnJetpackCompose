@@ -412,6 +412,8 @@ class MainActivity : ComponentActivity() {
                     )
                 } */
 
+                //AnimatedContent
+
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
