@@ -420,11 +420,12 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center
                 ){
                     var count by remember {
-                        mutableStateOf(2)
+                        mutableStateOf(0)
                     }
-                    androidx.compose.material.Button(onClick = { /*TODO*/ }) {
-                        
+                    Button(onClick = { count++ }) {
+                        Text(text = "Add")
                     }
+                    Text(text = "Count $count")
                 }
             }
         }
