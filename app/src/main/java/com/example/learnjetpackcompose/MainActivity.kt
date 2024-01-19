@@ -425,7 +425,11 @@ class MainActivity : ComponentActivity() {
                     Button(onClick = { count++ }) {
                         Text(text = "Add")
                     }
-                    Text(text = "Count $count")
+                    AnimatedContent(targetState = count, transitionSpec = {
+                        fadeIn() with fadeOut()
+                    }) {
+                        Text(text = "Count $it")
+                    }
                 }
             }
         }
