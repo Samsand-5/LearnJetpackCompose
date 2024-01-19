@@ -419,7 +419,12 @@ class MainActivity : ComponentActivity() {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ){
-
+                    var count by remember {
+                        mutableStateOf(2)
+                    }
+                    androidx.compose.material.Button(onClick = { /*TODO*/ }) {
+                        
+                    }
                 }
             }
         }
