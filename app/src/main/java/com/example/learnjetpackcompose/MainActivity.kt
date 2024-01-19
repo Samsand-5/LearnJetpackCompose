@@ -65,7 +65,7 @@ class MainActivity : ComponentActivity() {
     /* val viewModel by lazy {
         ViewModelProvider(this).get(MyViewModel::class.java)
     } */
-    @OptIn(ExperimentalTextApi::class)
+    @OptIn(ExperimentalTextApi::class, ExperimentalAnimationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
