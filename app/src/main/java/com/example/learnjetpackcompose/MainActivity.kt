@@ -377,10 +377,20 @@ class MainActivity : ComponentActivity() {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
+
+                    var numberOfLines by remember {
+                        mutableStateOf(2)
+                    }
                     Text(
                         text = "AAAAAAAAAAAAAAAAAAA EEEEEEEEEEEEEEEEEEEEEEEEE IIIIIIIIIIIIIIIIIIIIIII OOOOOOOOOOOOOOOOOOOOOO UUUUUUUUUUUUUU"
                             .repeat(2),
-                        modifier = Modifier.padding(5.dp).background(Color.LightGray)
+                        modifier = Modifier
+                            .padding(5.dp)
+                            .background(Color.LightGray)
+                            .clickable {
+
+                            },
+                        maxLines = numberOfLines
                     )
                 }
             }
