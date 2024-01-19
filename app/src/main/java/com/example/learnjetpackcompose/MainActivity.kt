@@ -349,7 +349,7 @@ class MainActivity : ComponentActivity() {
 
                 // learning animations using jetpack compose
 
-                Column(modifier = Modifier.fillMaxSize()) {
+               /* Column(modifier = Modifier.fillMaxSize()) {
                     var isContentVisible by remember {
                         mutableStateOf(false)
                     }
@@ -370,6 +370,17 @@ class MainActivity : ComponentActivity() {
 
                         }
                     }
+               }  */
+
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        text = "AAAAAAAAAAAAAAAAAAA EEEEEEEEEEEEEEEEEEEEEEEEE IIIIIIIIIIIIIIIIIIIIIII OOOOOOOOOOOOOOOOOOOOOO UUUUUUUUUUUUUU"
+                            .repeat(2)
+                    )
                 }
             }
         }
