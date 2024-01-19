@@ -379,7 +379,8 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Text(
                         text = "AAAAAAAAAAAAAAAAAAA EEEEEEEEEEEEEEEEEEEEEEEEE IIIIIIIIIIIIIIIIIIIIIII OOOOOOOOOOOOOOOOOOOOOO UUUUUUUUUUUUUU"
-                            .repeat(2)
+                            .repeat(2),
+                        modifier = Modifier.padding(5.dp).background(Color.LightGray)
                     )
                 }
             }
