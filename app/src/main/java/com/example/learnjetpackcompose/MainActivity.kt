@@ -378,8 +378,8 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center
                 ) {
 
-                    var numberOfLines by remember {
-                        mutableStateOf(2)
+                    var isAllTextVisible by remember {
+                        mutableStateOf(false)
                     }
                     Text(
                         text = "AAAAAAAAAAAAAAAAAAA EEEEEEEEEEEEEEEEEEEEEEEEE IIIIIIIIIIIIIIIIIIIIIII OOOOOOOOOOOOOOOOOOOOOO UUUUUUUUUUUUUU"
@@ -390,7 +390,7 @@ class MainActivity : ComponentActivity() {
                             .clickable {
 
                             },
-                        maxLines = numberOfLines
+                        maxLines = if(isAllTextVisible) Int.MAX_VALUE else 2
                     )
                 }
             }
