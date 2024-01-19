@@ -376,6 +376,7 @@ class MainActivity : ComponentActivity() {
                     }
                }  */
 
+                //Animated size changes
                 /*
                 Column(
                     modifier = Modifier.fillMaxSize(),
