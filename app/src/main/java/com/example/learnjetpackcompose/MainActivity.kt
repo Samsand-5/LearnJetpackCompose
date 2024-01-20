@@ -460,6 +460,36 @@ class MainActivity : ComponentActivity() {
                         }
                     )
                 }  */
+
+                //learning animaTable
+
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+
+                    var scale by remember { mutableStateOf(1f) }
+                    var color by remember { mutableStateOf(Color.Red) }
+                    val animateScale by animateFloatAsState(targetValue = scale)
+                    val animateColor by animateColorAsState(targetValue = color)
+
+                    Box(modifier = Modifier
+                        .size(100.dp)
+                        .scale(animateScale)
+                        .clip(CircleShape)
+                        .background(animateColor)
+                        .clickable {
+                            scale += 0.1f
+                            color = Color(
+                                red = Random.nextInt(255),
+                                blue = Random.nextInt(255),
+                                green = Random.nextInt(255)
+                            )
+                        }
+                    )
+                }
+
             }
         }
     }
