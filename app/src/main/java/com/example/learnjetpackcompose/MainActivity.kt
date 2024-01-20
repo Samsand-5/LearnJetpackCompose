@@ -469,9 +469,8 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center
                 ){
 
-                    var scale by remember { mutableStateOf(1f) }
+                    var scale = remember { Animatable(1f) }
                     var color by remember { mutableStateOf(Color.Red) }
-                    val animateScale by animateFloatAsState(targetValue = scale)
                     val animateColor by animateColorAsState(targetValue = color)
 
                     Box(modifier = Modifier
