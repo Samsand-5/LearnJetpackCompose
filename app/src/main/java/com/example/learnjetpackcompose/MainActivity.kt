@@ -472,6 +472,7 @@ class MainActivity : ComponentActivity() {
                 ){
 
                     val scale = remember { Animatable(1f) }
+                    val alpha = remember { Animatable(1f) }
                     var color by remember { mutableStateOf(Color.Red) }
                     val animateColor by animateColorAsState(targetValue = color)
                     var scope = rememberCoroutineScope()
@@ -485,6 +486,9 @@ class MainActivity : ComponentActivity() {
                             scope.launch {
                                 launch {
                                     scale.animateTo(scale.value + 0.1f)
+                                }
+                                launch {
+                                    alpha.animateTo()
                                 }
                             }
                             color = Color(
