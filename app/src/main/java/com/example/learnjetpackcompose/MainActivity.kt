@@ -512,7 +512,7 @@ class MainActivity : ComponentActivity() {
                     val color = infiniteTransition.animateColor(
                         initialValue = Color.Red,
                         targetValue = Color.Green,
-                        animationSpec =
+                        animationSpec = infiniteRepeatable(animation = tween())
                     )
                     Box(modifier = Modifier
                         .size(100.dp)
