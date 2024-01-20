@@ -464,7 +464,7 @@ class MainActivity : ComponentActivity() {
                 }  */
 
                 //learning animaTable
-
+                /*
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -496,6 +496,30 @@ class MainActivity : ComponentActivity() {
                                 blue = Random.nextInt(255),
                                 green = Random.nextInt(255)
                             )
+                        }
+                    )
+                } */
+
+                //Infinite Transitions
+
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+
+                    val scale = remember { Animatable(1f) }
+                    val alpha = remember { Animatable(1f) }
+                    var color by remember { mutableStateOf(Color.Red) }
+                    val animateColor by animateColorAsState(targetValue = color)
+                    var scope = rememberCoroutineScope()
+                    Box(modifier = Modifier
+                        .size(100.dp)
+                        .scale(scale.value)
+                        .clip(CircleShape)
+                        .background(animateColor.copy(alpha = alpha.value))
+                        .clickable {
+
                         }
                     )
                 }
