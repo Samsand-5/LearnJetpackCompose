@@ -482,9 +482,8 @@ class MainActivity : ComponentActivity() {
                         .background(animateColor)
                         .clickable {
                             scope.launch {
-
+                                scale.animateTo()
                             }
-                            scale += 0.1f
                             color = Color(
                                 red = Random.nextInt(255),
                                 blue = Random.nextInt(255),
