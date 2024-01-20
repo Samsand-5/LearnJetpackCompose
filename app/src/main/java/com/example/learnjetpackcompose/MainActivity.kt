@@ -447,12 +447,10 @@ class MainActivity : ComponentActivity() {
 
                     Box(modifier = Modifier
                         .size(100.dp)
+                        .scale(scale)
                         .clip(CircleShape)
                         .background(Color.Red)
-                        .clickable {
-                            scale += 0.1f
-                        }
-                        .scale(scale)
+                        .clickable { scale += 0.1f }
                     )
                 }
             }
