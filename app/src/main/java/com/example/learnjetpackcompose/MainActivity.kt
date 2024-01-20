@@ -441,7 +441,7 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center
                 ){
 
-                    val scale by remember {
+                    var scale by remember {
                         mutableStateOf(1f)
                     }
 
@@ -450,7 +450,7 @@ class MainActivity : ComponentActivity() {
                         .clip(CircleShape)
                         .background(Color.Red)
                         .clickable {
-
+                            scale += 0.1f
                         }
                         .scale(scale)
                     )
