@@ -7,10 +7,7 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.*
-import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.Spring
-import androidx.compose.animation.core.spring
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -444,6 +441,8 @@ class MainActivity : ComponentActivity() {
                     var scale by remember {
                         mutableStateOf(1f)
                     }
+
+                    val animatedState by animateFloatAsState(targetValue = scale)
 
                     Box(modifier = Modifier
                         .size(100.dp)
