@@ -517,9 +517,8 @@ class MainActivity : ComponentActivity() {
                     Box(modifier = Modifier
                         .size(100.dp)
                         .clip(CircleShape)
-                        .clickable {
+                        .background(color.value)
 
-                        }
                     )
                 }
 
