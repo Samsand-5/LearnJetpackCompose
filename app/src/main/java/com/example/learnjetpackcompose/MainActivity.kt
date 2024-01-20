@@ -58,6 +58,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.ui.draw.scale
 import com.example.learnjetpackcompose.ui.theme.ComposablePreviewTheme
 
 class MainActivity : ComponentActivity() {
@@ -441,7 +442,7 @@ class MainActivity : ComponentActivity() {
                 ){
 
                     val scale by remember {
-                        mutableStateOf(2)
+                        mutableStateOf(1f)
                     }
 
                     Box(modifier = Modifier
@@ -451,6 +452,7 @@ class MainActivity : ComponentActivity() {
                         .clickable {
 
                         }
+                        .scale(scale)
                     )
                 }
             }
