@@ -439,7 +439,7 @@ class MainActivity : ComponentActivity() {
                 ){
 
                     var scale by remember { mutableStateOf(1f) }
-                    val color by remember { mutableStateOf(Color.Red) }
+                    var color by remember { mutableStateOf(Color.Red) }
                     val animateScale by animateFloatAsState(targetValue = scale)
                     val animateColor by animateColorAsState(targetValue = color)
 
