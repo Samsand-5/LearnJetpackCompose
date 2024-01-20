@@ -439,11 +439,19 @@ class MainActivity : ComponentActivity() {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ){
+
+                    val scale by remember {
+                        mutableStateOf(2)
+                    }
+
                     Box(modifier = Modifier
                         .size(100.dp)
                         .clip(CircleShape)
-                        .background(Color.Red)){
-                    }
+                        .background(Color.Red)
+                        .clickable {
+
+                        }
+                    )
                 }
             }
         }
