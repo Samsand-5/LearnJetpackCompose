@@ -481,8 +481,11 @@ class MainActivity : ComponentActivity() {
                         .clip(CircleShape)
                         .background(animateColor)
                         .clickable {
+
                             scope.launch {
-                                scale.animateTo(scale.value + 1)
+                                launch {
+                                    scale.animateTo(scale.value + 0.1f)
+                                }
                             }
                             color = Color(
                                 red = Random.nextInt(255),
