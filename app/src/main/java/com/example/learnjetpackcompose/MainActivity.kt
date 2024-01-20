@@ -480,7 +480,7 @@ class MainActivity : ComponentActivity() {
                         .size(100.dp)
                         .scale(scale.value)
                         .clip(CircleShape)
-                        .background(animateColor)
+                        .background(animateColor.copy(alpha = alpha.value))
                         .clickable {
 
                             scope.launch {
