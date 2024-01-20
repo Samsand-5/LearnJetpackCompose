@@ -509,7 +509,11 @@ class MainActivity : ComponentActivity() {
                 ){
 
                     val infiniteTransition = rememberInfiniteTransition()
-
+                    val color = infiniteTransition.animateColor(
+                        initialValue = Color.Red,
+                        targetValue = Color.Green,
+                        animationSpec =
+                    )
                     Box(modifier = Modifier
                         .size(100.dp)
                         .clip(CircleShape)
