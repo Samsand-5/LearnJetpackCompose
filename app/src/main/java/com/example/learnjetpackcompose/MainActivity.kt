@@ -442,11 +442,11 @@ class MainActivity : ComponentActivity() {
                         mutableStateOf(1f)
                     }
 
-                    val animatedState by animateFloatAsState(targetValue = scale)
+                    val animateScale by animateFloatAsState(targetValue = scale)
 
                     Box(modifier = Modifier
                         .size(100.dp)
-                        .scale(scale)
+                        .scale(animateScale)
                         .clip(CircleShape)
                         .background(Color.Red)
                         .clickable { scale += 0.1f }
