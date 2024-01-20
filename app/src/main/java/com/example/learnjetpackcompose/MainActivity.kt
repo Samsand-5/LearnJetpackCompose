@@ -469,13 +469,13 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center
                 ){
 
-                    var scale = remember { Animatable(1f) }
+                    val scale = remember { Animatable(1f) }
                     var color by remember { mutableStateOf(Color.Red) }
                     val animateColor by animateColorAsState(targetValue = color)
 
                     Box(modifier = Modifier
                         .size(100.dp)
-                        .scale(animateScale)
+                        .scale(scale.value)
                         .clip(CircleShape)
                         .background(animateColor)
                         .clickable {
