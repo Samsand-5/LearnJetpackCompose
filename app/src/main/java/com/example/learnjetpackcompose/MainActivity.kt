@@ -451,7 +451,11 @@ class MainActivity : ComponentActivity() {
                         .background(animateColor)
                         .clickable {
                             scale += 0.1f
-                            color = Color(red = Random.nextInt(255), blue = Random.nextInt(255), green = Random.nextInt(255))
+                            color = Color(
+                                red = Random.nextInt(255),
+                                blue = Random.nextInt(255),
+                                green = Random.nextInt(255)
+                            )
                         }
                     )
                 }
