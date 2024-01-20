@@ -57,6 +57,8 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.ui.draw.scale
 import com.example.learnjetpackcompose.ui.theme.ComposablePreviewTheme
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
@@ -472,13 +474,16 @@ class MainActivity : ComponentActivity() {
                     val scale = remember { Animatable(1f) }
                     var color by remember { mutableStateOf(Color.Red) }
                     val animateColor by animateColorAsState(targetValue = color)
-
+                    var scope = rememberCoroutineScope()
                     Box(modifier = Modifier
                         .size(100.dp)
                         .scale(scale.value)
                         .clip(CircleShape)
                         .background(animateColor)
                         .clickable {
+                            scope.launch {
+
+                            }
                             scale += 0.1f
                             color = Color(
                                 red = Random.nextInt(255),
