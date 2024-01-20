@@ -57,6 +57,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.ui.draw.scale
 import com.example.learnjetpackcompose.ui.theme.ComposablePreviewTheme
+import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
 
@@ -448,7 +449,10 @@ class MainActivity : ComponentActivity() {
                         .scale(animateScale)
                         .clip(CircleShape)
                         .background(animateColor)
-                        .clickable { scale += 0.1f }
+                        .clickable {
+                            scale += 0.1f
+                            color = Color(red = Random.nextInt(255))
+                        }
                     )
                 }
             }
