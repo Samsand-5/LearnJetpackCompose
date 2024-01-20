@@ -502,6 +502,7 @@ class MainActivity : ComponentActivity() {
 
                 //Infinite Transitions
 
+                /*
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -518,9 +519,8 @@ class MainActivity : ComponentActivity() {
                         .size(100.dp)
                         .clip(CircleShape)
                         .background(color.value)
-
                     )
-                }
+                }   */
 
             }
         }
