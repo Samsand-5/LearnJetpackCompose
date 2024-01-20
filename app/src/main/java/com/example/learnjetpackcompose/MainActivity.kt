@@ -508,16 +508,11 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center
                 ){
 
-                    val scale = remember { Animatable(1f) }
-                    val alpha = remember { Animatable(1f) }
-                    var color by remember { mutableStateOf(Color.Red) }
-                    val animateColor by animateColorAsState(targetValue = color)
-                    var scope = rememberCoroutineScope()
+                    val infiniteTransition = rememberInfiniteTransition()
+
                     Box(modifier = Modifier
                         .size(100.dp)
-                        .scale(scale.value)
                         .clip(CircleShape)
-                        .background(animateColor.copy(alpha = alpha.value))
                         .clickable {
 
                         }
