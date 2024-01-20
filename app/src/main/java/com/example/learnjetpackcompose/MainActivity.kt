@@ -488,7 +488,7 @@ class MainActivity : ComponentActivity() {
                                     scale.animateTo(scale.value + 0.1f)
                                 }
                                 launch {
-                                    alpha.animateTo()
+                                    alpha.animateTo(alpha.value + 0.1f)
                                 }
                             }
                             color = Color(
