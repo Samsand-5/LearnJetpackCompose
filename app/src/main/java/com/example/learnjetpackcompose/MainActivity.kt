@@ -433,6 +433,7 @@ class MainActivity : ComponentActivity() {
 
                 //Animate*AsState
 
+                /*
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -458,7 +459,7 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                     )
-                }
+                }  */
             }
         }
     }
