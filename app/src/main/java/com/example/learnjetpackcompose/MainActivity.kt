@@ -533,7 +533,17 @@ class MainActivity : ComponentActivity() {
 fun DeleteBackground(
     swipeDismissState: DismissState
 ){
+    val color = if(swipeDismissState.dismissDirection == DismissDirection.EndToStart){
+        Color.Red
+    }
+    else{
+        Color.Transparent
+    }
 
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    )
 }
 
   /*  @OptIn(ExperimentalTextApi::class)
