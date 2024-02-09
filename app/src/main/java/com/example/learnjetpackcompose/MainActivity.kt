@@ -538,7 +538,10 @@ fun <T> SwipeToDeleteContainer(
     animationDuration: Int = 500,
     content: @Composable (T) -> Unit
 ){
-
+    var isRemoved by remember {
+        mutableStateOf(false)
+    }
+    val state = rememberDismissState()
 }
 
 @Composable
