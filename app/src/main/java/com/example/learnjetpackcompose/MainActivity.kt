@@ -12,6 +12,7 @@ import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Icon
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -20,6 +21,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
@@ -543,7 +545,14 @@ fun DeleteBackground(
     Box(
         modifier = Modifier
             .fillMaxSize()
-    )
+            .background(color)
+            .padding(16.dp)
+    ) {
+        Icon(
+            imageVector = Icons.Default.Delete,
+            contentDescription = null,
+            tint = Color.White)
+    }
 }
 
   /*  @OptIn(ExperimentalTextApi::class)
