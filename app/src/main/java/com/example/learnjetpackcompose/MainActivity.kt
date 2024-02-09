@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterialApi::class)
+@file:OptIn(ExperimentalMaterialApi::class, ExperimentalMaterial3Api::class)
 
 package com.example.learnjetpackcompose
 
@@ -50,6 +50,9 @@ import androidx.compose.material3.ButtonDefaults
 import com.example.learnjetpackcompose.ui.theme.MyCustomCard
 import com.example.learnjetpackcompose.ui.theme.Publisher
 import androidx.compose.runtime.getValue
+import androidx.compose.material3.DismissDirection
+import androidx.compose.material3.DismissValue
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.ui.focus.FocusRequester
@@ -526,6 +529,8 @@ class MainActivity : ComponentActivity() {
                     )
                 }   */
 
+
+
             }
         }
     }
@@ -537,19 +542,51 @@ fun <T> SwipeToDeleteContainer(
     onDelete: (T) -> Unit,
     animationDuration: Int = 500,
     content: @Composable (T) -> Unit
-){
-
+) {
     var isRemoved by remember {
         mutableStateOf(false)
     }
-    val state = rememberDismissState()
+    val state = rememberDismissState(
+        confirmValueChange = { value ->
+            if (value == DismissValue.DismissedToStart) {
+                isRemoved = true
+                true
+            } else {
+                false
+            }
+        }
+    )
+
+    LaunchedEffect(key1 = isRemoved) {
+        if(isRemoved) {
+            delay(animationDuration.toLong())
+            onDelete(item)
+        }
+    }
+
+    AnimatedVisibility(
+        visible = !isRemoved,
+        exit = shrinkVertically(
+            animationSpec = tween(durationMillis = animationDuration),
+            shrinkTowards = Alignment.Top
+        ) + fadeOut()
+    ) {
+        SwipeToDismiss(
+            state = state,
+            background = {
+                DeleteBackground(swipeDismissState = state)
+            },
+            dismissContent = { content(item) },
+            directions = setOf(DismissDirection.EndToStart)
+        )
+    }
 }
 
 @Composable
 fun DeleteBackground(
     swipeDismissState: DismissState
 ){
-    val color = if(swipeDismissState.dismissDirection == DismissDirection.EndToStart){
+    val color = if(swipeDismissState.dismissDirection == androidx.compose.material.DismissDirection.EndToStart){
         Color.Red
     }
     else{
