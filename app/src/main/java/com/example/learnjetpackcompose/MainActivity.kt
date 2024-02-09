@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterialApi::class)
+
 package com.example.learnjetpackcompose
 
 import android.annotation.SuppressLint
@@ -527,6 +529,12 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun DeleteBackground(
+    swipeDismissState: DismissState
+){
+
+}
 
   /*  @OptIn(ExperimentalTextApi::class)
     private fun AnnotatedString.Builder.blueGradientText(text: String) {
