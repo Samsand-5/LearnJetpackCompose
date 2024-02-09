@@ -14,6 +14,7 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Icon
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
@@ -127,7 +128,7 @@ class MainActivity : ComponentActivity() {
 //                  Text(text = "welcome")
 //              }
 
-/*                Box(
+                /*                Box(
                     Modifier
                         .padding(start = 10.dp, end = 10.dp, top = 10.dp)
                         .fillMaxHeight(0.5f)
@@ -361,7 +362,7 @@ class MainActivity : ComponentActivity() {
 
                 // learning animations using jetpack compose
 
-               /* Column(modifier = Modifier.fillMaxSize()) {
+                /* Column(modifier = Modifier.fillMaxSize()) {
                     var isContentVisible by remember {
                         mutableStateOf(false)
                     }
@@ -529,12 +530,48 @@ class MainActivity : ComponentActivity() {
                     )
                 }   */
 
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    val programmingLanguages = remember {
+                        mutableStateListOf(
+                            "Kotlin",
+                            "Java",
+                            "C++",
+                            "C#",
+                            "JavaScript",
+                        )
+                    }
 
-
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxSize()
+                    ) {
+                        items(
+                            items = programmingLanguages,
+                            key = { it }
+                        ) { language ->
+                            SwipeToDeleteContainer(
+                                item = language,
+                                onDelete = {
+                                    programmingLanguages -= language
+                                }
+                            ) { language ->
+                                Text(
+                                    text = language,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .background(MaterialTheme.colorScheme.background)
+                                        .padding(16.dp)
+                                )
+                            }
+                        }
+                    }
+                }
             }
         }
     }
-}
 
 @Composable
 fun <T> SwipeToDeleteContainer(
