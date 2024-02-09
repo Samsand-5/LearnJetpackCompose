@@ -574,74 +574,76 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-@Composable
-fun <T> SwipeToDeleteContainer(
-    item: T,
-    onDelete: (T) -> Unit,
-    animationDuration: Int = 500,
-    content: @Composable (T) -> Unit
-) {
-    var isRemoved by remember {
-        mutableStateOf(false)
-    }
-    val state = rememberDismissState(
-        confirmValueChange = { value ->
-            if (value == DismissValue.DismissedToStart) {
-                isRemoved = true
-                true
-            } else {
-                false
+    @Composable
+    fun <T> SwipeToDeleteContainer(
+        item: T,
+        onDelete: (T) -> Unit,
+        animationDuration: Int = 500,
+        content: @Composable (T) -> Unit
+    ) {
+        var isRemoved by remember {
+            mutableStateOf(false)
+        }
+        val state = rememberDismissState(
+            confirmValueChange = { value ->
+                if (value == DismissValue.DismissedToStart) {
+                    isRemoved = true
+                    true
+                } else {
+                    false
+                }
+            }
+        )
+
+        LaunchedEffect(key1 = isRemoved) {
+            if (isRemoved) {
+                delay(animationDuration.toLong())
+                onDelete(item)
             }
         }
-    )
 
-    LaunchedEffect(key1 = isRemoved) {
-        if(isRemoved) {
-            delay(animationDuration.toLong())
-            onDelete(item)
+        AnimatedVisibility(
+            visible = !isRemoved,
+            exit = shrinkVertically(
+                animationSpec = tween(durationMillis = animationDuration),
+                shrinkTowards = Alignment.Top
+            ) + fadeOut()
+        ) {
+            SwipeToDismiss(
+                state = state,
+                background = {
+                    DeleteBackground(swipeDismissState = state)
+                },
+                dismissContent = { content(item) },
+                directions = setOf(androidx.compose.material.DismissDirection.EndToStart)
+            )
         }
     }
 
-    AnimatedVisibility(
-        visible = !isRemoved,
-        exit = shrinkVertically(
-            animationSpec = tween(durationMillis = animationDuration),
-            shrinkTowards = Alignment.Top
-        ) + fadeOut()
+    @Composable
+    fun DeleteBackground(
+        swipeDismissState: DismissState
     ) {
-        SwipeToDismiss(
-            state = state,
-            background = {
-                DeleteBackground(swipeDismissState = state)
-            },
-            dismissContent = { content(item) },
-            directions = setOf(DismissDirection.EndToStart)
-        )
-    }
-}
+        val color =
+            if (swipeDismissState.dismissDirection == androidx.compose.material.DismissDirection.EndToStart) {
+                Color.Red
+            } else {
+                Color.Transparent
+            }
 
-@Composable
-fun DeleteBackground(
-    swipeDismissState: DismissState
-){
-    val color = if(swipeDismissState.dismissDirection == androidx.compose.material.DismissDirection.EndToStart){
-        Color.Red
-    }
-    else{
-        Color.Transparent
-    }
-
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(color)
-            .padding(16.dp),
-        contentAlignment = Alignment.CenterEnd
-    ) {
-        Icon(
-            imageVector = Icons.Default.Delete,
-            contentDescription = null,
-            tint = Color.White)
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color)
+                .padding(16.dp),
+            contentAlignment = Alignment.CenterEnd
+        ) {
+            Icon(
+                imageVector = Icons.Default.Delete,
+                contentDescription = null,
+                tint = Color.White
+            )
+        }
     }
 }
 
