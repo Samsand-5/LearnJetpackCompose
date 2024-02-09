@@ -532,7 +532,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun <T> SwipeToDeleteContainer()
+fun <T> SwipeToDeleteContainer(
+    item: T,
+    onDelete: (T) -> Unit,
+    animationDuration: Int = 500,
+    content: @Composable (T) -> Unit
+){
+
+}
 
 @Composable
 fun DeleteBackground(
