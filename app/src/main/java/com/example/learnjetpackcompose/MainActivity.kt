@@ -532,6 +532,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun <T> SwipeToDeleteContainer()
+
+@Composable
 fun DeleteBackground(
     swipeDismissState: DismissState
 ){
