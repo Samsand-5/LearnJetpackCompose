@@ -585,8 +585,8 @@ class MainActivity : ComponentActivity() {
             mutableStateOf(false)
         }
         val state = rememberDismissState(
-            confirmValueChange = { value ->
-                if (value == DismissValue.DismissedToStart) {
+            confirmStateChange = { value ->
+                if (value == androidx.compose.material.DismissValue.DismissedToStart) {
                     isRemoved = true
                     true
                 } else {
